@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/assets_manager.dart';
+
 class QuoteScreen extends StatefulWidget {
   const QuoteScreen({Key? key}) : super(key: key);
 
@@ -10,11 +12,9 @@ class QuoteScreen extends StatefulWidget {
 class _QuoteScreenState extends State<QuoteScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Quote',
-        style: TextStyle(fontSize: 25,
-        color: Colors.black),),
+        child: Image.asset(AppAssets.quote),
       ),
     );
   }

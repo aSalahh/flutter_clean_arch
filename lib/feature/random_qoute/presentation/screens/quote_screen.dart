@@ -13,9 +13,10 @@ class _QuoteScreenState extends State<QuoteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image.asset(AppAssets.quote),
-      ),
-    );
+        body: Center(
+            child: InkWell(
+      child: Image.asset(AppAssets.quote),
+      onTap: () {},
+    )));
   }
 }

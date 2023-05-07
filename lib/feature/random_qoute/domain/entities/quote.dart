@@ -15,6 +15,5 @@ class Quote extends Equatable {
       required this.dateModified});
 
   @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [author, id, content, dateAdded, dateModified];
 }

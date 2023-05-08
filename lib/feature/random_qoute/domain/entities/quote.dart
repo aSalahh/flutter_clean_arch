@@ -4,8 +4,8 @@ class Quote extends Equatable {
   final String content;
   final String id;
   final String author;
-  final String dateAdded;
-  final String dateModified;
+  final DateTime dateAdded;
+  final DateTime dateModified;
 
   const Quote(
       {required this.content,

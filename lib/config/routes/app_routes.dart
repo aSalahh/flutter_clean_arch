@@ -1,4 +1,5 @@
 import 'package:clean_arch/feature/favourite_qoute/presentation/screens/favourite_quote_screen.dart';
+import 'package:clean_arch/feature/random_qoute/presentation/bloc/random_quote_cubit.dart';
 import 'package:clean_arch/feature/random_qoute/presentation/screens/quote_screen.dart';
 import 'package:flutter/material.dart';
 

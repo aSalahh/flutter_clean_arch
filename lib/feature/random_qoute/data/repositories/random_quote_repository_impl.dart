@@ -15,8 +15,8 @@ class RandomQuoteRepositoryImpl extends RandomQuoteRepository {
   final RandomQuoteRemoteDataSource randomQuoteRemoteDataSource;
   final RandomQuoteLocalDataSource randomQuoteLocalDataSource;
 
-  RandomQuoteRepositoryImpl(this.networkInfo, this.randomQuoteRemoteDataSource,
-      this.randomQuoteLocalDataSource);
+  RandomQuoteRepositoryImpl({required this.networkInfo,required this.randomQuoteRemoteDataSource,
+     required this.randomQuoteLocalDataSource});
 
   @override
   Future<Either<Failure, Quote>> getRandomQuote() async {

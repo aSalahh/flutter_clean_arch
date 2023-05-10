@@ -1,7 +1,7 @@
 import 'package:clean_arch/core/utils/app_colors.dart';
 import 'package:clean_arch/core/utils/app_strings.dart';
 import 'package:clean_arch/core/widgets/error_widget.dart' as error_widget;
-import 'package:clean_arch/feature/random_qoute/presentation/bloc/random_quote_cubit.dart';
+import 'package:clean_arch/feature/random_qoute/presentation/cubit/random_quote_cubit.dart';
 import 'package:clean_arch/feature/random_qoute/presentation/widgets/quote_cotent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -77,7 +77,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
             itemBuilder: (BuildContext context, int index) {
               return DecoratedBox(
                 decoration: BoxDecoration(
-                  color: index.isEven ? Colors.red : Colors.green,
+                  color: AppColors.primary,
                 ),
               );
             },

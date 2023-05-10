@@ -17,14 +17,9 @@ class QuoteScreen extends StatefulWidget {
 class _QuoteScreenState extends State<QuoteScreen> {
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar(
-      title: const Text(AppStrings.appName),
-    );
+    final appBar = AppBar(title: const Text(AppStrings.appName),);
     return RefreshIndicator(
-        child: Scaffold(
-          appBar: appBar,
-          body: _buildBodyContent(),
-        ),
+        child: Scaffold(appBar: appBar, body: _buildBodyContent(),),
         onRefresh: () => _getRandomQuote());
   }
 
@@ -43,47 +38,30 @@ class _QuoteScreenState extends State<QuoteScreen> {
         if (state is RandomQuoteIsLoading) {
           return Center(child: SpinKitFadingCircle(
             itemBuilder: (BuildContext context, int index) {
-              return DecoratedBox(
-                decoration: BoxDecoration(
-                  color: index.isEven ? Colors.red : Colors.green,
-                ),
-              );
-            },
-          ));
+              return DecoratedBox(decoration: BoxDecoration(
+                color: index.isEven ? Colors.red : Colors.green,),);
+            },));
         } else if (state is RandomQuoteIsError) {
-          return const error_widget.ErrorWidget();
+          return error_widget.ErrorWidget(onPress: () => _getRandomQuote(),);
         } else if (state is RandomQuoteLoaded) {
-          return Column(
-            children: [
-              QuoteContent(quote: state.quote),
-              InkWell(
-                child: Container(
-                  margin: const EdgeInsets.symmetric(vertical: 15.0),
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: AppColors.primary),
-                  child: const Icon(
-                    Icons.refresh,
-                    size: 30.0,
-                    color: Colors.white,
-                  ),
-                ),
-                onTap: () => _getRandomQuote(),
-              )
-            ],
-          );
+          return Column(children: [
+            QuoteContent(quote: state.quote),
+            InkWell(child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 15.0),
+              padding: const EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: AppColors.primary),
+              child: const Icon(
+                Icons.refresh, size: 30.0, color: Colors.white,),),
+              onTap: () => _getRandomQuote(),)
+          ],);
         } else {
           return SpinKitFadingCircle(
             itemBuilder: (BuildContext context, int index) {
               return DecoratedBox(
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                ),
-              );
-            },
-          );
+                decoration: BoxDecoration(color: AppColors.primary,),);
+            },);
         }
-      },
-    );
+      },);
   }
 }

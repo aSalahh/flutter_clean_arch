@@ -1,4 +1,3 @@
-import 'package:clean_arch/feature/favourite_qoute/presentation/screens/favourite_quote_screen.dart';
 import 'package:clean_arch/feature/random_qoute/presentation/cubit/random_quote_cubit.dart';
 import 'package:clean_arch/feature/random_qoute/presentation/screens/quote_screen.dart';
 import 'package:clean_arch/injection_container.dart' as di;
@@ -22,10 +21,6 @@ class AppRoutes {
                   child: const QuoteScreen(),
                 ));
 
-      case Routes.favouriteQuotesRoute:
-        return MaterialPageRoute(builder: ((context) {
-          return const FavouriteQuote();
-        }));
       default:
         return undefinedRoute();
     }
